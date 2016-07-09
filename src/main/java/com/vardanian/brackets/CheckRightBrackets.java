@@ -1,4 +1,4 @@
-package vardanian.bracketsRight;
+package com.vardanian.brackets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,29 +27,21 @@ public class CheckRightBrackets {
         return res[number];
     }
 
-    public static void main(String[] args) throws IOException {
-
-        CheckRightBrackets check = new CheckRightBrackets();
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Please input non negative integer of open brackets: ");
+    public void inputNonNegativeInteger() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             String input = br.readLine();
             int inputNumber = Integer.parseInt(input);
-            int rightBrackets = check.getCountRightBrackets(inputNumber);
+            int rightBrackets = getCountRightBrackets(inputNumber);
             System.out.println("Count of right brackets is: " + rightBrackets);
-        } catch (NumberFormatException e) {
-            System.err.println("Input text does not integer, please try again.");
-        }catch (NegativeArraySizeException e) {
-            System.err.println("Input text negative, please try again.");
-        } catch (IOException e) {
-            System.err.println("Error to write input text: " + e);
-        } finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                System.err.println("Error, the thread doesn't close");
-            }
+        } catch (Exception e) {
+            System.err.println("Input text does not non negative integer, please try again: ");
         }
+    }
+
+    public static void main(String[] args) {
+
+        CheckRightBrackets check = new CheckRightBrackets();
+        System.out.println("Please input non negative integer of open brackets: ");
+        check.inputNonNegativeInteger();
     }
 }

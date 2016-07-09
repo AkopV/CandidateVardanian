@@ -1,4 +1,4 @@
-package vardanian.factorialSum;
+package com.vardanian.factorial;
 
 import java.math.BigInteger;
 
@@ -34,9 +34,7 @@ public class FindSumFactorialNumbers {
 
     public static void main(String[] args) {
         FindSumFactorialNumbers findSumFactorialNumbers = new FindSumFactorialNumbers();
-        // find and print the number of factorial 100!
-        System.out.println(findSumFactorialNumbers.factorial(BigInteger.valueOf(100)));
-        // print the sum of the number of factorial 100!
-        System.out.println(findSumFactorialNumbers.sum(findSumFactorialNumbers.factorial(BigInteger.valueOf(100))));
+        System.out.println("Factorial number is: " + findSumFactorialNumbers.factorial(BigInteger.valueOf(100)));
+        System.out.println("The sum of factorials number is: " + findSumFactorialNumbers.sum(findSumFactorialNumbers.factorial(BigInteger.valueOf(100))));
     }
 }
