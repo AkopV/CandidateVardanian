@@ -1,6 +1,5 @@
-package travelsalesproblem;
+package com.vardanian.travelsalesproblem;
 
-import javax.sql.rowset.serial.SerialRef;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

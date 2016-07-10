@@ -1,4 +1,4 @@
-package travelsalesproblem;
+package com.vardanian.travelsalesproblem;
 
 import java.util.Arrays;
 
