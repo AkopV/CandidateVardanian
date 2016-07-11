@@ -1,16 +1,16 @@
 package com.vardanian.travelsalesproblem;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        String fileName = "C:\\Users\\Vardanian\\IdeaProjects\\CandidateVardanian\\src\\main\\resources\\inputText.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+
+    public static void main(String[] args) throws IOException {
+        Main main = new Main();
+        ClassLoader classLoader = main.getClass().getClassLoader();
+        File file = new File(main.getClass().getClassLoader().getResource("file/inputText.txt").getFile());
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String input = reader.readLine();
             int source = Integer.parseInt(input);
             for (int testIndex = 0; testIndex < source; testIndex++) {
@@ -27,6 +27,7 @@ public class Main {
                     numberCities[cityIndex] = cityName;
                     //reads the number of neighbours
                     input = reader.readLine();
+
                     int numberNeighbours = Integer.parseInt(input);
                     for (int neighborIndex = 0; neighborIndex < numberNeighbours; neighborIndex++) {
                         input = reader.readLine();
@@ -73,10 +74,7 @@ public class Main {
                     System.out.println("Destination distance: " + destinationDistance);
                 }
             }
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found");
-        } catch (IOException e) {
-            System.err.println("Stream not closed");
         }
     }
 }
+

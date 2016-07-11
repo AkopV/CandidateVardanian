@@ -3,7 +3,7 @@
 <suite name="CandidateVardanian" verbose="1">
     <test name="test CandidateVardanian functionality">
         <classes>
-            <class name="CandidateVardanianTest"/>
+            <class name="factorial.FindSumFactorialNumbersTest"/>
         </classes>
     </test>
 </suite>
